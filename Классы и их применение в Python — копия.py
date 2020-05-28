@@ -1,3 +1,4 @@
+
 class Animal:
     animaltype = ""
     animalvoice = ""
@@ -15,7 +16,7 @@ class Animal:
         print(f"{self.animaltype.capitalize()} {self.name} имеет голос: {self.animalvoice}.")
 
     def getweight(self):
-        print(f"{self.animaltype.capitalize()} {self.name} имеет вес {self.weight} килограмм.")
+        print(f"{self.animaltype.capitalize()} {self.name} имеет вес {self.weight} килограмм(а).")
 
 
 class Bird(Animal):
@@ -64,16 +65,6 @@ class Hen(Bird):
     animaltype = "курица"
 
 
-goose1 = Goose("Серый", 7)
-goose2 = Goose("Белый", 8)
-cow1 = Cow("Манька", 426)
-sheep1 = Sheep("Барашек", 70)
-sheep2 = Sheep("Кудрявый", 85)
-hen1 = Hen("Ко-Ко", 4)
-hen2 = Hen("Куквреку", 5)
-goat1 = Goat("Рога", 65)
-goat2 = Goat("Копыта", 75)
-duck1 = Duck("Кряква", 4)
 
 pets_dict = {
 "Серый" : Goose("Серый", 7),
@@ -96,59 +87,26 @@ print(f"Общий вес животных составляет: {sum(pets_weigh
 max_pet_weight = max(pets_weights)
 for pets_item in pets_dict.values():
     if pets_item.weight == max_pet_weight:
-        print(pets_item.name)
+        print(f"Самое тяжелое животное: {pets_item.name}.")
 
-# Тестируем кормление
-goose1.feed()
-goose2.feed()
-cow1.feed()
-sheep1.feed()
-sheep2.feed()
-hen1.feed()
-hen2.feed()
-goat1.feed()
-goat2.feed()
-duck1.feed()
 
+#Тестируем кормление
+pets_dict["Серый"].feed()
 
 #Тестируем голос
-goose1.voice()
-goose2.voice()
-cow1.voice()
-sheep1.voice()
-sheep2.voice()
-hen1.voice()
-hen2.voice()
-goat1.voice()
-goat2.voice()
-duck1.voice()
+pets_dict["Копыта"].voice()
 
 #Тестируем доение
-cow1.getmilk()
-goat1.getmilk()
-goat2.getmilk()
+pets_dict["Манька"].getmilk()
 
 #Тестируем сбор яиц
-goose1.geteggs()
-goose2.geteggs()
-hen1.geteggs()
-hen2.geteggs()
-duck1.geteggs()
+pets_dict["Серый"].geteggs()
 
 #Тестируем стрижку
-sheep1.cutwool()
-sheep2.cutwool()
+pets_dict["Барашек"].cutwool()
 
 #Узнаём вес
-goose1.getweight()
-goose2.getweight()
-cow1.getweight()
-sheep1.getweight()
-sheep2.getweight()
-hen1.getweight()
-hen2.getweight()
-goat1.getweight()
-goat2.getweight()
-duck1.getweight()
+pets_dict["Ко-ко"].getweight()
+
 
 
